@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="CAT">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conquest</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+<!--favicon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon%20conquest/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon%20conquest/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon%20conquest/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon%20conquest/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon%20conquest/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon%20conquest/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon%20conquest/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon%20conquest/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon%20conquest/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon%20conquest/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon%20conquest/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon%20conquest/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon%20conquest/favicon-16x16.png">
+    <link rel="manifest" href="/favicon%20conquest/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="JS/suport.js"></script>
+</head>
+
+
+
+
+<body onload="animar()">
+    <div class="pagBase pag0" id="pag0">
+        <img src="IMG/logo.png">
+    </div>
+
+    <div class="pagBase pag1" id="pag1">
+        <img class="icono" src="IMG/logo%20tot.png">
+    </div>
+
+    <div class="pagBase pag2" id="pag2">
+        <img class="icono" id="tierra" src="IMG/tierra.png" onclick="tierra()">
+
+        <div class="txt" id="txt">
+            <p>El món ha estat pres i la seva cultura robada , tot per probar l'enginy humà. <br><br>Supera les proves de cadascun dels continents i reconquistar la Terra.</p>
+        </div>
+        <div class="cajaflecha">
+            <img class="play" id="flecha" onclick="Time('pag2','pag3', 800)" src="IMG/play.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag3" id="pag3">
+        <img class="icono" src="IMG/logo%20bn.png">
+        <div onclick="Time('pag3','pag4', 1000)">
+            <h2>Començar</h2>
+        </div>
+    </div>
+
+    <div class="pagBase pag4" id="pag4">
+        <div class="txt">
+            <h1>Tria el teu objectiu</h1>
+        </div>
+
+        <!--MOBILE-->
+        <div class="continentes">
+            <div class="slider" id="slider">
+                <div class="america">
+                    <div class="realAm">
+                        <div id="progresoAm" onclick="Time('pag4','pag5_1', 1000)">
+                        </div>
+                        <div class="blancoAm" id="blancoM0" onclick="Time('pag4','pag5_1', 1000)">
+                        </div>
+                    </div>
+                </div>
+                <div class="europa">
+                    <div class="realEu">
+                        <div id="progresoEu" onclick="Time('pag4','pag5_2', 1000)">
+                        </div>
+                        <div class="blancoEu" id="blancoM1" onclick="Time('pag4','pag5_2', 1000)">
+                        </div>
+                    </div>
+                </div>
+                <div class="africa">
+                    <div class="realAf">
+                        <div id="progresoAf" onclick="Time('pag4','pag5_3', 1000)">
+                        </div>
+                        <div class="blancoAf" id="blancoM2" onclick="Time('pag4','pag5_3', 1000)">
+                        </div>
+                    </div>
+                </div>
+                <div class="asia">
+                    <div class="realAs">
+                        <div id="progresoAs" onclick="Time('pag4','pag5_4', 1000)">
+                        </div>
+                        <div class="blancoAs" id="blancoM3" onclick="Time('pag4','pag5_4', 1000)">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="oceania">
+                    <div class="realOc">
+                        <div id="progresoOc" onclick="Time('pag4','pag5_5', 1000)">
+                        </div>
+                        <div class="blancoOc" id="blancoM4" onclick="Time('pag4','pag5_5', 1000)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="direcciones">
+            <img class="flechaizq" src="IMG/fleizq.png" onclick="slider(100)"><img class="flechader" src="IMG/fleder.png" onclick="slider(-100)">
+        </div>
+
+        <!--DESKTOP-->
+        <div class="america noVer">
+            <div class="realAm">
+                <div id="progresoAm" onclick="Time('pag4','pag5_1', 1000); ">
+                </div>
+                <div class="blancoAm" id="blanco0" onclick="Time('pag4','pag5_1', 1000)">
+                </div>
+            </div>
+        </div>
+        <div class="europa noVer">
+            <div class="realEu">
+                <div id="progresoEu" onclick="Time('pag4','pag5_2', 1000)">
+                </div>
+                <div class="blancoEu" id="blanco1" onclick="Time('pag4','pag5_2', 1000)">
+                </div>
+            </div>
+        </div>
+        <div class="africa noVer">
+            <div class="realAf">
+                <div id="progresoAf" onclick="Time('pag4','pag5_3', 1000)">
+                </div>
+                <div class="blancoAf" id="blanco2" onclick="Time('pag4','pag5_3', 1000)">
+                </div>
+            </div>
+        </div>
+        <div class="asia noVer">
+            <div class="realAs">
+                <div id="progresoAs" onclick="Time('pag4','pag5_4', 1000)">
+                </div>
+                <div class="blancoAs" id="blanco3" onclick="Time('pag4','pag5_4', 1000)">
+                </div>
+            </div>
+        </div>
+        <div class="oceania noVer">
+            <div class="realOc">
+                <div id="progresoOc" onclick="Time('pag4','pag5_5', 1000)">
+                </div>
+                <div class="blancoOc" id="blanco4" onclick="Time('pag4','pag5_5', 1000)">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pagBase pag5" id="pag5_1">
+        <div class="conti">
+            <div class="america"><img class="imgcont" src="IMG/America%20(4).png"></div>
+        </div>
+        <div class="nom" onclick="Time('pag5_1','pag6', 1000), generaContenido(TestAmerica,'TestAmerica','#fabd50',0,AleAm,'AleAm')">
+            <img class="nombre" src="IMG/nomAmerica.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag5" id="pag5_2">
+        <div class="conti">
+            <div class="europa">
+                <img class="imgcont" src="IMG/Europa%20(4).png"></div>
+        </div>
+        <div class="nom" onclick="Time('pag5_2','pag6', 1000), generaContenido(TestEuropa,'TestEuropa','#419abb',1,AleEu,'AleEu')">
+            <img class="nombre" src="IMG/nomeuropa.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag5" id="pag5_3">
+        <div class="conti">
+            <div class="africa"><img class="imgcont" src="IMG/Africa%20(4).png"></div>
+        </div>
+        <div class="nom" onclick="Time('pag5_3','pag6', 1000), generaContenido(TestAfrica,'TestAfrica','#b15979',2,AleAf,'AleAf')">
+            <img class="nombre" src="IMG/nomafrica.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag5" id="pag5_4">
+        <div class="conti">
+            <div class="asia"><img class="imgcont" src="IMG/Asia%20(4).png"></div>
+        </div>
+        <div class="nom" onclick="Time('pag5_4','pag6', 1000), generaContenido(TestAsia,'TestAsia','#dd6863',3,AleAs,'AleAs')">
+            <img class="nombre" src="IMG/nomasia.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag5" id="pag5_5">
+        <div class="conti">
+            <div class="oceania"><img class="imgcont" src="IMG/Oceania%20(4).png"></div>
+        </div>
+        <div class="nom" onclick="Time('pag5_5','pag6', 1000), generaContenido(TestOceania,'TestOceania','#60ba96',4,AleOc,'AleOc')">
+            <img class="nombre" src="IMG/nomoceania.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag6" id="pag6">
+        <div class="pregunta" id="preguntas">
+            <h2></h2>
+        </div>
+        <div class="resp r1" id="respuesta1">
+        </div>
+        <div class="resp r2" id="respuesta2">
+        </div>
+        <div class="resp r3" id="respuesta3">
+        </div>
+        <div class="resp r4" id="respuesta4">
+        </div>
+
+        <div class="cajaflecha">
+            <img class="play" id="flecha" onclick="Time('pag6','pag4', 1000)" src="IMG/home.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag7" id="pag7_1">
+        <div class="conti">
+            <div class="america"><img class="imgcont" src="IMG/America%20(4).png"></div>
+        </div>
+        <div class="txt">
+            <h1>Has conquerit el<br> continent americà!</h1>
+        </div>
+        <div class="cajaflecha">
+            <img class="play" onclick="outro('pag7_1','0', 800)" src="IMG/darkPlay.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag7" id="pag7_2">
+        <div class="conti">
+            <div class="europa"><img class="imgcont" src="IMG/Europa%20(4).png"></div>
+        </div>
+        <div class="txt">
+            <h1>Has conquerit el<br> continent europeu!</h1>
+        </div>
+        <div class="cajaflecha">
+            <img class="play" onclick="outro('pag7_2','1', 800)" src="IMG/darkPlay.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag7" id="pag7_3">
+        <div class="conti">
+            <div class="africa"><img class="imgcont" src="IMG/Africa%20(4).png"></div>
+        </div>
+        <div class="txt">
+            <h1>Has conquerit el<br> continent africà!</h1>
+        </div>
+        <div class="cajaflecha">
+            <img class="play" onclick="outro('pag7_3','2', 800)" src="IMG/darkPlay.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag7" id="pag7_4">
+        <div class="conti">
+            <div class="asia"><img class="imgcont" src="IMG/Asia%20(4).png"></div>
+        </div>
+        <div class="txt">
+            <h1>Has conquerit el<br> continent asiatic!</h1>
+        </div>
+        <div class="cajaflecha">
+            <img class="play" onclick="outro('pag7_4','3', 800)" src="IMG/darkPlay.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag7" id="pag7_5">
+        <div class="conti">
+            <div class="oceania"><img class="imgcont" src="IMG/Oceania%20(4).png"></div>
+        </div>
+        <div class="txt">
+            <h1>Has conquerit el<br> continent oceanic!</h1>
+        </div>
+        <div class="cajaflecha">
+            <img class="play" onclick="outro('pag7_5','4',800)" src="IMG/darkPlay.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag8" id="pag8">
+        <div class="txt">
+            <h1>Tens tots els<br>teus objetius</h1>
+        </div>
+        <div class="cajaflecha">
+            <img class="play" onclick="Time('pag8','pag9', 1000)" src="IMG/outro-01.png">
+        </div>
+    </div>
+
+    <div class="pagBase pag9" id="pag9">
+        <img class="icono" src="IMG/logo%20tot.png">
+        <div class="txt">
+            <p>Has superat les proves i has reconquerit la Terra.<br><br>Has retornat la cultura robada i el color ha tornat al món.</p>
+        </div>
+        <div class="cajaflecha">
+            <img class="play" onclick="Time('pag9','pag3', 800)" src="IMG/repete.png">
+        </div>
+    </div>
+
+    <!--JSONs Script-->
+
+
+
+    <script src="JSON/Africa.js"></script>
+    <script src="JSON/Asia.js"></script>
+    <script src="JSON/America.js"></script>
+    <script src="JSON/Europa.js"></script>
+    <script src="JSON/Oceania.js"></script>
+
+    <script src="JSON/jsonCodigo.js"></script>
+
+</body>
+
+</html>

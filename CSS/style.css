@@ -1,0 +1,957 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    transition: background 2s ease;
+}
+
+.pagBase {
+    display: grid;
+    grid-template-areas: "a a a a"
+        "a a a a"
+        "a a a a"
+        "b c c d"
+        "b c c d"
+        "e e e e"
+        "e e e e"
+        "e e e e";
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 2s ease;
+}
+
+/*Textos*/
+p {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    color: #232323;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #232323;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #232323;
+}
+
+h3 {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    color: #232323;
+    cursor: pointer;
+}
+
+.txt {
+    grid-area: d;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Carga*/
+.pag0 {
+    opacity: 1;
+}
+
+.pag0 img {
+    animation: giro 2s linear infinite;
+    grid-area: c;
+    width: 100%;
+    align-self: center;
+}
+
+@keyframes giro {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+/*Explicacion y Final*/
+.pag2,
+.pag9 {
+    grid-template-areas:
+        "a a a a"
+        "b c c f"
+        "b c c f"
+        "b d d f"
+        "b d d f"
+        "b d d f"
+        "b e e f"
+        "g g g g";
+}
+
+.icono {
+    grid-area: c;
+    width: 100%;
+    align-self: center;
+}
+
+/*Explicacion*/
+
+.pag2 .icono {
+    padding: 10%;
+    cursor: pointer;
+}
+
+.pag2 .txt {
+    opacity: 0;
+    transition: opacity 2s ease, color 2s ease;
+}
+
+.pag2 .txt p {
+    color: #fff;
+}
+
+.pag2 .cajaflecha .play {
+    width: 10%;
+}
+
+.cajaflecha {
+    grid-area: e;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cajaflecha .play {
+    width: 10%;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.pag2 .cajaflecha .play {
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+/*Inicio*/
+.pag3 {
+    grid-template-areas:
+        "a a a a"
+        "a a a a"
+        "b c c d"
+        "b c c d"
+        "e e e e"
+        "e e e e"
+        "f g g h"
+        "f i i h";
+    background-color: #232323;
+}
+
+.pag3 div {
+    grid-area: g;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #232323;
+    margin: 5%;
+}
+
+
+/*Mapa*/
+.pag4 {
+    grid-template-areas:
+        "g a a h"
+        "g a a h"
+        "b b b b"
+        "b b b b"
+        "b b b b"
+        "b b b b"
+        "c f f e"
+        "c d d e";
+}
+
+.pag4 .txt {
+    grid-area: a;
+}
+
+.pag4 .txt h1 {
+    color: #fff;
+}
+
+.continentes {
+    grid-area: b;
+    overflow: hidden;
+}
+
+.slider {
+    width: 500vw;
+    height: 100%;
+    display: flex;
+    position: relative;
+    left: 0vw;
+    transition: left 1s;
+}
+
+.direcciones {
+    grid-area: f;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10%;
+}
+
+.flechaizq,
+.flechader {
+    width: 35%;
+}
+
+.america,
+.europa,
+.asia,
+.africa,
+.oceania {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.noVer {
+    display: none;
+}
+
+.realAm {
+    width: 60%;
+    height: 80%;
+    position: relative;
+}
+
+.realEu {
+    width: 80%;
+    height: 59%;
+    position: relative;
+}
+
+.realAf {
+    width: 66%;
+    height: 78%;
+    position: relative;
+}
+
+.realAs {
+    width: 80%;
+    height: 66%;
+    position: relative;
+}
+
+.realOc {
+    width: 64%;
+    height: 58%;
+    position: relative;
+}
+
+.blancoAm {
+    background-image: url(../IMG/Americavacia.png);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.blancoEu {
+    background-image: url(../IMG/Europavacia.png);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.blancoAf {
+    background-image: url(../IMG/Africavacia.png);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.blancoAs {
+    background-image: url(../IMG/Asiavacia.png);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.blancoOc {
+    background-image: url(../IMG/Oceaniavacia.png);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+#progresoAm {
+    background-image: url(../IMG/AmericaProgress.png);
+    background-size: cover;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#progresoEu {
+    background-image: url(../IMG/EuropaProgress.png);
+    background-size: cover;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#progresoAf {
+    background-image: url(../IMG/AfricaProgress.png);
+    background-size: cover;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#progresoAs {
+    background-image: url(../IMG/AsiaProgress.png);
+    background-size: cover;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    position: absolute;
+}
+
+#progresoOc {
+    background-image: url(../IMG/OceaniaProgress.png);
+    background-size: cover;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/*Intro continente*/
+.pag5 {
+    grid-template-areas:
+        "a a a a"
+        "b b b b"
+        "b b b b"
+        "b b b b"
+        "b b b b"
+        "c c c c"
+        "d d d d"
+        "e e e e";
+}
+
+.conti,
+.nom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.conti {
+    grid-area: b;
+}
+
+.conti .america,
+.conti .europa,
+.conti .asia,
+.conti .africa,
+.conti .oceania {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgcont,
+.nombre {
+    width: 70%;
+}
+
+.pag5 .nom {
+    grid-area: d;
+}
+
+
+/**Pregunta 1**/
+.pag6 {
+    grid-template-areas:
+        "a a a a"
+        "b b b b"
+        "b b b b"
+        "c d d i"
+        "c e e i"
+        "c f f i"
+        "c g g i"
+        "c h h i";
+}
+
+.pregunta {
+    grid-area: b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    margin: 10%;
+    padding: 10%;
+    background-color: white;
+}
+
+.resp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 5%;
+    padding: 10%;
+}
+
+.r1 {
+    grid-area: d;
+}
+
+.r2 {
+    grid-area: e;
+}
+
+.r3 {
+    grid-area: f;
+}
+
+.r4 {
+    grid-area: g;
+}
+
+.pag6 {
+    background-color: #fabd50;
+}
+
+.pag6 .cajaflecha {
+    grid-area: h;
+}
+
+
+/*Victoria Continente*/
+.pag7 {
+    grid-template-areas:
+        "a a a a"
+        "b b b b"
+        "b b b b"
+        "b b b b"
+        "b b b b"
+        "d c c f"
+        "d c c f"
+        "d e e f";
+}
+
+.pag7 {
+    background-color: white;
+}
+
+.pag7 .txt {
+    grid-area: c;
+}
+
+.pag7 .txt h1 {
+    font-size: 26px;
+}
+
+.pag7 .cajaflecha .play {
+    opacity: 1;
+    margin-bottom: 10%;
+}
+
+
+/*Outro*/
+.pag8 {
+    grid-template-areas:
+        "a a a a"
+        "a a a a"
+        "b b b b"
+        "b b b b"
+        "b b b b"
+        "b b b b"
+        "c f f e"
+        "c d d e";
+}
+
+.pag8 {
+    background-color: white;
+}
+
+.pag8 .txt {
+    grid-area: a;
+}
+
+.pag8 .cajaflecha {
+    grid-area: b;
+}
+
+.pag8 .cajaflecha .play {
+    width: 60%;
+}
+
+/*Final*/
+.pag9 {
+    background-color: #fff !important;
+}
+
+.pag9 .icono {
+    padding: 10%;
+    cursor: pointer;
+}
+
+
+.pag9 .cajaflecha .play {
+    width: 20%;
+}
+
+
+
+
+@media only screen and (min-width:401px) {
+
+    .pagBase {
+        grid-template-areas:
+            "a a a a a a a a"
+            "a a a a a a a a"
+            "b b b c c d d d"
+            "b b b c c d d d"
+            "e e e e e e e e"
+            "e e e e e e e e";
+
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    /*Textos ok*/
+    p {
+        font-size: 26px;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+
+    /*Explicacion, OK, X y Final*/
+    .pag2,
+    .pag9 {
+        grid-template-areas:
+            "a a a a a a a a"
+            "a a a a a a a a"
+            "b c c d d d d e"
+            "b c c d d d d e"
+            "f f f f g g i i"
+            "f f f f h h i i";
+    }
+
+    .pag2 .cajaflecha,
+    .pag9 .cajaflecha {
+        grid-area: g;
+    }
+
+
+    .pag2 .cajaflecha .play:hover {
+        width: 15%;
+    }
+
+    .pag2 .icono:hover {
+        width: 105%;
+    }
+
+    .pag2 .txt,
+    .pag9 .txt {
+        grid-area: d;
+        padding: 10%;
+    }
+
+
+    /*Inicio*/
+    .pag3 {
+        grid-template-areas:
+            "a a a a a a a a"
+            "b b b c c d d d"
+            "b b b c c d d d"
+            "b b b e e d d d"
+            "b b b f f d d d"
+            "b b b g g d d d";
+    }
+
+    .pag3 div {
+        grid-area: f;
+        cursor: pointer;
+        margin: 5% 12%;
+    }
+
+    .pag3 div:hover {
+        background: #232323;
+        border: 4px solid #fff;
+    }
+
+    .pag3 div:hover h2 {
+        font-weight: bold;
+        color: #fff;
+    }
+
+
+    /*Mapa*/
+    .pag4 {
+        grid-template-areas:
+            "a b b b b b b c"
+            "a d d e e f f c"
+            "a d d e e f f c"
+            "a d d g g h h c"
+            "a d d g g h h c"
+            "i i i g g h h c";
+    }
+
+    .pag4 .txt {
+        grid-area: b;
+    }
+
+    .pag4 .continentes,
+    .pag4 .direcciones {
+        display: none;
+    }
+
+    .pag4 .america,
+    .pag4 .europa,
+    .pag4 .asia,
+    .pag4 .africa,
+    .pag4 .oceania {
+        width: 100%;
+        position: relative;
+
+    }
+
+    .pag4 .america {
+        grid-area: d;
+        padding: 10%;
+    }
+
+    .pag4 .europa {
+        grid-area: e;
+        padding: 3%;
+    }
+
+    .pag4 .asia {
+        grid-area: f;
+        padding: 3%;
+    }
+
+    .pag4 .africa {
+        grid-area: g;
+        padding: 12%;
+    }
+
+    .pag4 .oceania {
+        grid-area: h;
+        padding: 20%;
+    }
+
+    .noVer {
+        display: flex;
+    }
+
+    .realAm {
+        width: 100%;
+        position: relative;
+    }
+
+    .realEu {
+        width: 100%;
+        height: 99%;
+        position: relative;
+    }
+
+    .realAf {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .realAs {
+        width: 100%;
+        height: 109%;
+        position: relative;
+    }
+
+    .realOc {
+        width: 100%;
+        height: 77%;
+        position: relative;
+    }
+
+    .blancoAm {
+        background-image: url(../IMG/Americavacia.png);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        cursor: pointer;
+        transition: background-image 1s ease;
+    }
+
+    .blancoAm:hover {
+        background-image: url(../IMG/AmericaProgress.png);
+    }
+
+    .blancoEu {
+        background-image: url(../IMG/Europavacia.png);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: background-image 1s ease;
+    }
+
+    .blancoEu:hover {
+        background-image: url(../IMG/EuropaProgress.png);
+    }
+
+    .blancoAf {
+        background-image: url(../IMG/Africavacia.png);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: background-image 1s ease;
+    }
+
+    .blancoAf:hover {
+        background-image: url(../IMG/AfricaProgress.png);
+    }
+
+    .blancoAs {
+        background-image: url(../IMG/Asiavacia.png);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: background-image 1s ease;
+    }
+
+    .blancoAs:hover {
+        background-image: url(../IMG/AsiaProgress.png);
+    }
+
+    .blancoOc {
+        background-image: url(../IMG/Oceaniavacia.png);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: background-image 1s ease;
+    }
+
+    .blancoOc:hover {
+        background-image: url(../IMG/OceaniaProgress.png);
+    }
+
+    #progresoAm {
+        background-image: url(../IMG/AmericaProgress.png);
+        background-size: cover;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    #progresoEu {
+        background-image: url(../IMG/EuropaProgress.png);
+        background-size: cover;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    #progresoAf {
+        background-image: url(../IMG/AfricaProgress.png);
+        background-size: cover;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    #progresoAs {
+        background-image: url(../IMG/AsiaProgress.png);
+        background-size: cover;
+        width: 100%;
+        z-index: -1;
+        height: 100%;
+        position: absolute;
+    }
+
+    #progresoOc {
+        background-image: url(../IMG/OceaniaProgress.png);
+        background-size: cover;
+        z-index: -1;
+        width: 100%;
+        height: 99%;
+        position: absolute;
+    }
+
+    /*Intro continente*/
+    .pag5 {
+        grid-template-areas:
+            "a a a a a a a a"
+            "b b b d d d d d"
+            "b b b c c c c e"
+            "b b b c c c c e"
+            "b b b f f f f f"
+            "g g g g g g g g";
+    }
+
+    .pag5 .nom {
+        grid-area: c;
+    }
+
+    .nombre {
+        width: 70%;
+        cursor: pointer;
+    }
+
+    .nombre:hover {
+        width: 80%;
+    }
+
+    .conti .europa {
+        justify-content: flex-end;
+    }
+
+    .imgcont {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    /*Preguntas*/
+    .pag6 {
+        grid-template-areas:
+            "a a a a a a a a"
+            "b b c c c c i i"
+            "b b c c c c i i"
+            "b b d d e e i i"
+            "b b f f g g i i"
+            "k k k h h j j j";
+    }
+
+    .pregunta {
+        grid-area: c;
+        padding: 10%;
+        margin: 0%;
+        height: 80%;
+    }
+
+    .resp {
+        padding: 10%;
+    }
+
+    .pag6 .resp:hover {
+        background: #232323 !important;
+    }
+
+    .pag6 .resp:hover h3 {
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .pag6 .cajaflecha .play:hover {
+        width: 15%;
+    }
+
+
+    /*Victoria continente*/
+    .pag7 {
+        grid-template-areas:
+            "a a a a a a a a"
+            "b b b d d d d d"
+            "b b b c c c c f"
+            "b b b c c c c f"
+            "b b b g e e i i"
+            "h h h h h h h h";
+    }
+
+    .pag7 .cajaflecha .play {
+        margin-top: 10%;
+    }
+
+    .pag7 .cajaflecha .play:hover {
+        width: 15%;
+    }
+
+    .pag7 .txt h1 {
+        font-size: 36px;
+    }
+
+
+    /*Outro*/
+    .pag8 {
+        grid-template-areas:
+            "c c a a a a d d"
+            "c c a a a a d d"
+            "c c b b b b d d"
+            "c c b b b b d d"
+            "c c b b b b d d"
+            "c c b b b b d d"
+            "e e e e e e e e";
+    background-color: #fff;
+    }
+
+    .pag8 .cajaflecha .play {
+        width: 35%;
+        margin-bottom: 15%;
+    }
+    
+    .pag8 .cajaflecha .play:hover {
+        width: 45%;
+    }
+
+    /*Final*/
+
+    .pag9 .cajaflecha .play:hover {
+        width: 25%;
+        animation: giro 2s linear infinite;
+    }
+}
